@@ -20,8 +20,9 @@
     var qs = {};
     while (match = search.exec(query))
        qs[decode(match[1])] = decode(match[2]);
-    var title = qs['title'] == null ? "ONE" : qs['title'];
-    var summary = qs['summary'] == null ? "S O U R S E" : qs['summary'];
+    var title = qs['title'] == null ? "OPEN" : qs['title'];
+    var summary = qs['summary'] == null ? "S O U R C E" : qs['summary'];
+    open source
     var title2 = qs['title2'] == null ? "開源" : qs['title2'];
     var summary2 = qs['summary2'] == null ? "　就是力量。" : "　" + qs['summary2'];
     $(function() {
@@ -56,7 +57,7 @@ body {
 
 .clip {
     color: white;
-    background: url(rainbow3.jpg);
+    background: url(rainbow3-1.png);
     background-size:     cover;
     background-repeat:   no-repeat;
     background-position: center center;
