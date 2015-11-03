@@ -8,6 +8,7 @@
 <link href='http://fonts.googleapis.com/css?family=Righteous&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
 <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
 <script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script src="http://html2canvas.hertzen.com/build/html2canvas.js"></script>
 <script>
 (window.onpopstate = function () {
     var match,
@@ -28,6 +29,14 @@
         $("#summary" ).text(summary);
         $("#title2" ).text(title2);
         $("#summary2" ).text(summary2);
+
+        html2canvas($("#taiwanup"), {
+            onrendered: function(canvas) {
+                var $snapshot = $("#taiwanup-snapshot");
+                $snapshot.empty();
+                $("<img />", { src: canvas.toDataURL("image/png") }).appendTo($snapshot);
+            }
+        });
     });
 })();
 </script>
@@ -35,9 +44,14 @@
 @import url(http://fonts.googleapis.com/earlyaccess/cwtexhei.css);
 
 body {
+    background: #fff;
     font-size: 4em;
     //font-family: Lato, 'cwTeXHeiBold';
     font-family: Lato, 'cwTeXFangSong';
+}
+
+#taiwanup {
+    background: #fff;
 }
 
 .clip {
@@ -65,13 +79,15 @@ body {
 </head>
 <title>ONE TAIWAN</title>
 <body>
-    <div class="center">
+    <div id="taiwanup" class="center">
         <div>　</div>
         <div><span id="title" class="clip">OPEN</span></div>
         <div id="summary" class="summary">S O U R C E</div>
         <div id="title2" style="font-size: 2em">開源</div>
         <div id="summary2" class="summary2">　就是力量。</div>
         <!--<div>　就是不均。</div>-->
+        <div>　</div>
     </div>
+    <div id="taiwanup-snapshot"></div>
 </body>
 </html>
