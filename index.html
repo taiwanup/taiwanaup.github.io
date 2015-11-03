@@ -33,9 +33,9 @@
 
         html2canvas($("#taiwanup"), {
             onrendered: function(canvas) {
-                var $snapshot = $("#taiwanup-snapshot");
-                $snapshot.empty();
-                $("<img />", { src: canvas.toDataURL("image/png") }).appendTo($snapshot);
+                var snapshot = $("#taiwanup-snapshot");
+                snapshot.empty();
+                $("<img />", { src: canvas.toDataURL("image/png") }).appendTo(snapshot);
             }
         });
     });
@@ -80,7 +80,7 @@ body {
 </head>
 <title>ONE TAIWAN</title>
 <body>
-    <div id="taiwanup" class="center">
+    <div id="taiwanup" class="center" width="600px" height="800px">
         <div>　</div>
         <div><span id="title" class="clip">OPEN</span></div>
         <div id="summary" class="summary">S O U R C E</div>
