@@ -22,7 +22,6 @@
        qs[decode(match[1])] = decode(match[2]);
     var title = qs['title'] == null ? "OPEN" : qs['title'];
     var summary = qs['summary'] == null ? "S O U R C E" : qs['summary'];
-    open source
     var title2 = qs['title2'] == null ? "開源" : qs['title2'];
     var summary2 = qs['summary2'] == null ? "　就是力量。" : "　" + qs['summary2'];
     $(function() {
@@ -41,14 +40,14 @@
     });
 })();
 </script>
+<script src="http://s3-ap-northeast-1.amazonaws.com/justfont-user-script/jf-37020.js"></script>
 <style>
 @import url(http://fonts.googleapis.com/earlyaccess/cwtexhei.css);
 
 body {
     background: #fff;
     font-size: 4em;
-    //font-family: Lato, 'cwTeXHeiBold';
-    font-family: Lato, 'cwTeXFangSong';
+    font-family: Lato, 'sourcehansans-tc', 'cwTeXFangSong';
 }
 
 #taiwanup {
@@ -56,14 +55,13 @@ body {
 }
 
 .clip {
-    color: white;
     background: url(rainbow3-1.png);
     background-size:     cover;
     background-repeat:   no-repeat;
     background-position: center center;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    font-family: Lato;
+    font-family: Lato, 'sourcehansans-tc', 'cwTeXFangSong';
     font-style: bold;
     font-size: 3em;
 }
@@ -74,19 +72,18 @@ body {
     margin-top: -0.7em;
 }
 .summary2 {
-    margin-top: -0.2em;
+    margin-top: -0.5em;
 }
 </style>
 </head>
 <title>ONE TAIWAN</title>
 <body>
-    <div id="taiwanup" class="center" width="600px" height="800px">
+    <div id="taiwanup" class="center">
         <div>　</div>
         <div><span id="title" class="clip">OPEN</span></div>
         <div id="summary" class="summary">S O U R C E</div>
-        <div id="title2" style="font-size: 2em">開源</div>
+        <div id="title2" style="font-size: 2em; font-style: bold; margin-bottom: 0;">開源</div>
         <div id="summary2" class="summary2">　就是力量。</div>
-        <!--<div>　就是不均。</div>-->
         <div>　</div>
     </div>
     <div id="taiwanup-snapshot"></div>
