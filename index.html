@@ -9,6 +9,7 @@
 <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
 <script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
 <script src="http://html2canvas.hertzen.com/build/html2canvas.js"></script>
+<script src="http://s3-ap-northeast-1.amazonaws.com/justfont-user-script/jf-37020.js"></script>
 <script>
 (window.onpopstate = function () {
     var match,
@@ -22,8 +23,8 @@
        qs[decode(match[1])] = decode(match[2]);
     var title = qs['title'] == null ? "OPEN" : qs['title'];
     var summary = qs['summary'] == null ? "S O U R C E" : qs['summary'];
-    var title2 = qs['title2'] == null ? "開源" : qs['title2'];
-    var summary2 = qs['summary2'] == null ? "　就是力量。" : "　" + qs['summary2'];
+    var title2 = qs['title2'] == null ? "　開源　" : "　" + qs['title2'] + "　";
+    var summary2 = qs['summary2'] == null ? "　　就是力量｡" : "　　" + qs['summary2'] + "｡";
     $(function() {
         $("#title" ).text(title);
         $("#summary" ).text(summary);
@@ -40,7 +41,6 @@
     });
 })();
 </script>
-<script src="http://s3-ap-northeast-1.amazonaws.com/justfont-user-script/jf-37020.js"></script>
 <style>
 @import url(http://fonts.googleapis.com/earlyaccess/cwtexhei.css);
 
@@ -71,8 +71,15 @@ body {
 .summary {
     margin-top: -0.7em;
 }
+.section2 {
+}
+.title2 {
+    white-space: pre;
+}
 .summary2 {
-    margin-top: -0.5em;
+    position: relative;
+    top: -0.5em;
+    white-space: pre;
 }
 </style>
 </head>
@@ -82,8 +89,14 @@ body {
         <div>　</div>
         <div><span id="title" class="clip">OPEN</span></div>
         <div id="summary" class="summary">S O U R C E</div>
-        <div id="title2" style="font-size: 2em; font-style: bold; margin-bottom: 0;">開源</div>
-        <div id="summary2" class="summary2">　就是力量。</div>
+        <div class="section2">
+        <div style="float: left; position: relative; left: 50%;">
+        <div style="float: left; position: relative; left: -50%; text-align: left;">
+            <span id="title2" style="font-size: 2em; font-style: bold;">　開源　</span><br/>
+            <span id="summary2" class="summary2">　　就是力量｡</span>
+        </div>
+        </div>
+        </div>
         <div>　</div>
     </div>
     <div id="taiwanup-snapshot"></div>
