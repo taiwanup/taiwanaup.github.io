@@ -37,7 +37,6 @@
         <input type="button" id="btnCrop" value="Crop" style="float: right">
         <input type="button" id="btnZoomIn" value="+" style="float: right">
         <input type="button" id="btnZoomOut" value="-" style="float: right">
-        <!--<input type="button" id="btnDownload" value="Download" style="float: right">-->
     </div>
     <div class="cropped">
     </div>
@@ -63,22 +62,14 @@
             this.files = [];
         })
         $('#btnCrop').on('click', function(){
-            var img = cropper.getDataURL();
+            //var img = cropper.getDataURL();
             //$('.cropped').append('<img src="'+img+'" />');
-            $('.cropped').append('<div id="progress" style="display: inline-block; background: url('+img+'); background-size:100%;"><img src="tw-flag-a30.png" width="300px" height="300px" /></div>');
-        });
-
-        /*
-        $('#btnDownload').on('click', function(){
-            html2canvas($("#cropped"), {
-                onrendered: function(canvas) {
-                    var snapshot = $("#snapshot");
-                    snapshot.empty();
-                    $("<img />", { src: canvas.toDataURL("image/png") }).append(snapshot);
-                }
+            //$('.cropped').append('<div id="progress" style="display: inline-block; background: url('+img+'); background-size:100%;"><img src="tw-flag-a30.png" width="300px" height="300px" /></div>');
+            cropper.getDataURL(function(imageData) {
+                window.open(imageData);
+                //$('.cropped').append('<img src="'+imageData+'" />');
             });
         });
-        */
 
         $('#btnZoomIn').on('click', function(){
             cropper.zoomIn();

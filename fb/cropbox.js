@@ -14,6 +14,7 @@
         var el = el || $(options.imageBox),
             obj =
             {
+
                 state : {},
                 ratio : 1,
                 options : options,
@@ -21,7 +22,8 @@
                 thumbBox : el.find(options.thumbBox),
                 spinner : el.find(options.spinner),
                 image : new Image(),
-                getDataURL: function ()
+                imageMask : new Image(),
+                getDataURL: function (onDataUrl)
                 {
                     var width = this.thumbBox.width(),
                         height = this.thumbBox.height(),
@@ -39,9 +41,11 @@
                     canvas.height = height;
                     var context = canvas.getContext("2d");
                     context.drawImage(this.image, 0, 0, sw, sh, dx, dy, dw, dh);
+                    context.drawImage(this.imageMask, 0, 0, sw, sh, dx, dy, dw, dh);
                     var imageData = canvas.toDataURL('image/png');
-                    return imageData;
+                    onDataUrl(imageData);
                 },
+                /*
                 getBlob: function()
                 {
                     var imageData = this.getDataURL();
@@ -53,6 +57,7 @@
                     }
                     return  new Blob([new Uint8Array(array)], {type: 'image/png'});
                 },
+                */
                 zoomIn: function ()
                 {
                     this.ratio*=1.1;
@@ -117,6 +122,8 @@
                 setBackground();
             }
 
+
+        obj.imageMask.src = "tw-flag-a30.png";
         obj.spinner.show();
         obj.image.onload = function() {
             obj.spinner.hide();
