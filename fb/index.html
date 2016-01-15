@@ -5,6 +5,14 @@
     <title>Taiwan Up - Avatar</title>
     <link rel="stylesheet" href="style.css" type="text/css" />
     <style>
+        html,body,div,h1,h2 {
+            margin:0;
+            padding:0;
+        }
+        h1 {
+            padding: 1em;
+            padding-left: 6em;
+        }
         .container
         {
             position: absolute;
@@ -29,7 +37,9 @@
 </script>
 </head>
 <body>
-    <h1>頭像產生器<h1>
+    <div id="header" style="background-color: #4e69a2; margin:0;padding:0;">
+        <h1 style="color: white">頭像產生器<h1>
+    </div>
 <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
 <script src="cropbox.js"></script>
 <div class="container">
@@ -38,7 +48,7 @@
         <div class="spinner" style="display: none">Loading...</div>
     </div>
     <div class="action">
-        <input type="file" id="file" value="" style="float:left; width: 250px">
+        <input type="file" id="file" value="" style="float:left; width: 200px">
         <input type="button" id="btnCrop" value="下載" style="float: right">
         <input type="button" id="btnZoomIn" value="放大+" style="float: right">
         <input type="button" id="btnZoomOut" value="縮小-" style="float: right">
