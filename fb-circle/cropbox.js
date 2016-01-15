@@ -41,7 +41,7 @@
                     canvas.height = height;
                     var context = canvas.getContext("2d");
                     context.drawImage(this.image, 0, 0, sw, sh, dx, dy, dw, dh);
-                    context.drawImage(this.imageMask, 0, 0, 400, 400);
+                    context.drawImage(this.imageMask, 0, 0, 600, 600);
                     var imageData = canvas.toDataURL('image/png');
                     onDataUrl(imageData);
                 },
