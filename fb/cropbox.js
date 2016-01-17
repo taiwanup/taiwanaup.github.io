@@ -123,7 +123,7 @@
             }
 
 
-        obj.imageMask.src = "tw-flag-a30.png";
+        obj.imageMask.src = "tw.png";
         obj.spinner.show();
         obj.image.onload = function() {
             obj.spinner.hide();
